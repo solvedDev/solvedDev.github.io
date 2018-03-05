@@ -2,10 +2,34 @@
 	font-family: Arial;
 	margin: 0;
 	padding: 0;
-	background-color: white;
+	background-color: #404252;
 	font-weight: bold;
 }
 
 div.main {
 	text-align: center;
+}
+div.main img {
+	width: 100%;
+	height: auto;
+}
+
+nav {
+	text-align: center;
+	padding: 10px;
+	background-color: #323441;
+	color: white;
+}
+
+nav a, nav a:visited {
+	padding: 10px;
+	background-color: #323441;
+	color: white;
+	font-size: normal;
+	text-decoration: none;
+}
+
+nav a:hover {
+	background-color: #404252;
+	box-shadow: 2px 2px 10px black inset;
 }
