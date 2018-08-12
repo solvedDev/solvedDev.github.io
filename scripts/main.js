@@ -1,14 +1,28 @@
-const products = [
+const projects = [
 	{
-		image: "",
 		title: "JSON Editor",
-		text: "",
-		link: ""
+		text: "An advanced tool to simplify creating Minecraft addons. Enables a new addon syntax!",
+		link: "https://github.com/solvedDev/JSON-Editor-App"
+	},
+	{
+		title: "AnyLanguage",
+		text: "A generator to simplify your work with .lang files.",
+		link: "https://github.com/solvedDev/AnyLanguage"
+	},
+	{
+		title: "VS Code Suggestions",
+		text: "Auto-completions for addons in Visual Studio Code.",
+		link: "https://github.com/solvedDev/VSCode-Minecraft-Suggestions"
+	},
+	{
+		title: "Chain-Crafting",
+		text: "A custom crafting engine for Minecraft Bedrock based on the <em>minecraft:interact</em> component.",
+		link: "https://github.com/solvedDev/Chain-Crafting"
 	}
 ]
 
 class Article {
-	constructor(pTitle, pText, pLink, pImage) {
+	constructor(pImage="img/template.png", pTitle, pText, pLink="#") {
 		this.data = `<a class="article" href=${pLink}>
 			<span class="img-container">
 				<img src="${pImage}" class="center" alt="">
@@ -24,5 +38,14 @@ class Article {
 
 	get() {
 		return this.data;
+	}
+	add() {
+		document.body.innerHTML += this.data;
+	}
+}
+
+function renderProjects() {
+	for(let i in projects) {
+		new Article(projects[i].image, projects[i].title, projects[i].text, projects[i].link).add();
 	}
 }

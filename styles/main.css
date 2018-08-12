@@ -80,15 +80,16 @@ a:visited, a:hover, a:active, a {
 }
 
 @media only screen and (min-width: 600px) {
-	/* For desktops phones: */
+	/*  For desktops:  */
 	* {
 		font-size: 1em;
 	}
 	body {
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	}
+
 	.article {
-		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+		grid-template-columns: repeat(2, minmax(150px, 1fr));
 		grid-template-rows: unset;
 	}
 	.article p.article-text, .article h1 {
