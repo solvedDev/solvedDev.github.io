@@ -18,6 +18,11 @@ const projects = [
 		title: "Chain-Crafting",
 		text: "A custom crafting engine for Minecraft Bedrock based on the <em>minecraft:interact</em> component.",
 		link: "https://github.com/solvedDev/Chain-Crafting"
+	},
+	{
+		title: "Item-Generator",
+		text: "Custom item behavior made easy. On every entity.",
+		link: "https://github.com/solvedDev/Item-Generator"
 	}
 ]
 
