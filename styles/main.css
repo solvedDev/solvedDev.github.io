@@ -7,20 +7,21 @@
 	margin: 0;
 	padding: 0;
 	background-color: var(--brand-primary);
-	font-size: 1em;
+	font-size: 1.2em;
 }
 
 body {
 	margin: 1em;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+	grid-template-columns: 1fr;
 	grid-template-rows: fit-content;
 	grid-gap: 1em;
 }
 
 .article {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr;
 	outline: royalblue;
 	box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
 	transition: 0.1s ease-in-out;
@@ -44,18 +45,18 @@ body {
 	color: royalblue;
 }
 
-@media screen and (max-width: 500px) {
-	/* For mobile phones: */
+@media only screen and (min-width: 600px) {
+	/* For desktops phones: */
 	* {
-		font-size: 1.2em;
+		font-size: 1em;
 	}
-    .article {
-		grid-template-columns: 1fr;
-		grid-template-rows: 1fr 1fr;
-		color: red;
+	.article {
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		grid-template-rows: unset;
 	}
 
 	body {
-		grid-template-columns: 1fr;
+		grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+		background-color: red;
 	}
 }
