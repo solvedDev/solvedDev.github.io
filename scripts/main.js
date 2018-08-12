@@ -27,7 +27,7 @@ const projects = [
 ]
 
 class Article {
-	constructor(pImage="img/template.png", pTitle, pText, pLink="#") {
+	constructor(pImage="images/template.png", pTitle, pText, pLink="#") {
 		this.data = `<a class="article" href=${pLink}>
 			<span class="img-container">
 				<img src="${pImage}" class="center" alt="">
