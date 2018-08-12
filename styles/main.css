@@ -17,12 +17,21 @@
     -ms-user-select: none;
     user-select: none;
 }
-body {
+body div {
 	margin: 1em;
+	grid-gap: 1em;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, 1fr);
 	grid-template-rows: fit-content;
-	grid-gap: 1em;
+}
+nav {
+	background-color: royalblue;
+	font-weight: bold;
+	color: white;
+	width: 100%;
+	height: 2em;
+	padding: 0 1em;
+	box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
 }
 *::-webkit-scrollbar {
 	width: 6px;
@@ -84,7 +93,7 @@ a:visited, a:hover, a:active, a {
 	* {
 		font-size: 1em;
 	}
-	body {
+	body div {
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	}
 

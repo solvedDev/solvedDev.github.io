@@ -45,7 +45,7 @@ class Article {
 		return this.data;
 	}
 	add() {
-		document.body.innerHTML += this.data;
+		document.querySelector("body div").innerHTML += this.data;
 	}
 }
 
