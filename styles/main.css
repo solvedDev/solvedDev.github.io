@@ -114,3 +114,15 @@ a:visited, a:hover, a:active, a {
 		height: 170px;
 	}
 }
+
+/*  CODE PREVIEW  */
+pre, code {
+	font-family: monospace, monospace;
+}
+pre {
+	overflow: auto;
+}
+pre > code {
+	display: block;
+	word-wrap: normal;
+}

@@ -23,6 +23,11 @@ const projects = [
 		title: "Item-Generator",
 		text: "Custom item behavior made easy. On every entity.",
 		link: "https://github.com/solvedDev/Item-Generator"
+	},
+	{
+		type: "local-article",
+		title: "Item-Generator",
+		text: "Custom item behavior made easy. On every entity."
 	}
 ]
 
@@ -46,6 +51,23 @@ class Article {
 	}
 	add() {
 		document.querySelector("body div").innerHTML += this.data;
+	}
+}
+
+class CodeSnippet {
+	constructor() {
+		this.data = `<figure>
+			<pre>
+			  <code>
+				<!-- your code here -->
+				{
+					"x": {
+
+					}
+				}
+			  </code>
+			</pre>
+		</figure>`
 	}
 }
 

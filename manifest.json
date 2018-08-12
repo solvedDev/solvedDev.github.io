@@ -30,7 +30,7 @@
   ],
   "start_url": "/",
   "scope": "/",
-  "display": "standalone",
+  "display": "fullscreen",
   "background_color": "#4169e1",
   "theme_color": "#4169e1"
 }
