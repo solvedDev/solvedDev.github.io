@@ -26,8 +26,9 @@ const projects = [
 	},
 	{
 		type: "local-article",
-		title: "Item-Generator",
-		text: "Custom item behavior made easy. On every entity."
+		key: "server-uis",
+		title: "Server UIs",
+		text: "About how you can create an immersive, new UI for NPCs with only a behavior pack."
 	}
 ];
 const local_articles = {
@@ -57,9 +58,10 @@ class Article {
 	}
 }
 
-class LocalArticlePreview {
+class LocalArticle extends Article {
 	constructor(pImage="images/template.png", pTitle, pKey, pText) {
-		this.data = `<div class="article" onclick="renderLocalArticle(${pKey})">
+		super(pImage, pTitle, "", "");
+		this.data = `<a class="article" onclick="renderLocalArticle('${pKey}')">
 			<span class="img-container">
 				<img src="${pImage}" class="center" alt="">
 			</span>
@@ -69,14 +71,7 @@ class LocalArticlePreview {
 					${pText}
 				</p>
 			</span>
-		</div>`
-	}
-
-	get() {
-		return this.data;
-	}
-	add() {
-		document.querySelector("body div").innerHTML += this.data;
+		</a>`
 	}
 }
 
@@ -97,10 +92,26 @@ class CodeSnippet {
 	}
 }
 
-function renderProjects() {
+class ErrorScreen {
+	constructor(pError) {
+		this.data = `<h1>ERROR</h1>
+		<p>${pError}</p>`;
+	}
+
+	get() {
+		return this.data;
+	}
+}
+
+function renderProjects(pReset=true) {
+	if(pReset) {
+		let main = document.querySelector("body div");
+		main.innerHTML = "";
+		main.classList.add("main-page");
+	} 
 	for(let i in projects) {
 		if(projects[i].type == "local-article") {
-			new Article(projects[i].image, projects[i].title, projects[i].text, projects[i].link).add();
+			new LocalArticle(projects[i].image, projects[i].title, projects[i].key, projects[i].text).add();
 		} else {
 			new Article(projects[i].image, projects[i].title, projects[i].text, projects[i].link).add();
 		}
@@ -108,7 +119,21 @@ function renderProjects() {
 }
 
 function renderLocalArticle(pKey) {
+	let main = document.querySelector("body div");
 	fetch(local_articles[pKey])
 		.then(pResponse => pResponse.text())
-		.then(pText => document.querySelector("body div").innerHTML = pText);
+		.then(pText => main.innerHTML = pText)
+		.catch(pError => main.innerHTML = new ErrorScreen(pError).get());
+
+	let nav = document.querySelector("nav");
+	let btn = document.createElement("button");
+	btn.innerText = "<";
+	btn.classList.add("back-btn");
+	btn.onclick = function() {
+		nav.removeChild(btn);
+		renderProjects();
+	}
+
+	main.classList.remove("main-page");
+	nav.insertBefore(btn, nav.firstElementChild);
 }
