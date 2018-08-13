@@ -108,6 +108,7 @@ function renderProjects(pReset=true) {
 		let main = document.querySelector("body div");
 		main.innerHTML = "";
 		main.classList.add("main-page");
+		window.scrollTo(0, 0);
 	} 
 	for(let i in projects) {
 		if(projects[i].type == "local-article") {
@@ -136,4 +137,5 @@ function renderLocalArticle(pKey) {
 
 	main.classList.remove("main-page");
 	nav.insertBefore(btn, nav.firstElementChild);
+	window.scrollTo(0, 0);
 }
