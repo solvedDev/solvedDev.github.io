@@ -61,7 +61,7 @@ class Article {
 class LocalArticle extends Article {
 	constructor(pImage="images/template.png", pTitle, pKey, pText) {
 		super(pImage, pTitle, "", "");
-		this.data = `<a class="article" onclick="renderLocalArticle('${pKey}')">
+		this.data = `<a class="article" href="#" onclick="renderLocalArticle('${pKey}')">
 			<span class="img-container">
 				<img src="${pImage}" class="center" alt="">
 			</span>
