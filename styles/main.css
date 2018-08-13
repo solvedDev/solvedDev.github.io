@@ -30,6 +30,7 @@ body div.main-page {
 }
 nav {
 	position: sticky;
+	top: 0;
 	background-color: royalblue;
 	color: white;
 	width: calc(100% - 2em);
