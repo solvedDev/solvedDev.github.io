@@ -29,7 +29,10 @@ const projects = [
 		title: "Item-Generator",
 		text: "Custom item behavior made easy. On every entity."
 	}
-]
+];
+const local_articles = {
+	"server-uis": "https://solveddev.github.io/local_articles/server-uis"
+};
 
 class Article {
 	constructor(pImage="images/template.png", pTitle, pText, pLink="#") {
@@ -44,6 +47,29 @@ class Article {
 				</p>
 			</span>
 		</a>`
+	}
+
+	get() {
+		return this.data;
+	}
+	add() {
+		document.querySelector("body div").innerHTML += this.data;
+	}
+}
+
+class LocalArticlePreview {
+	constructor(pImage="images/template.png", pTitle, pKey, pText) {
+		this.data = `<div class="article" onclick="renderLocalArticle(${pKey})">
+			<span class="img-container">
+				<img src="${pImage}" class="center" alt="">
+			</span>
+			<span class="article-main">
+				<h1>${pTitle}</h1>
+				<p class="article-text">
+					${pText}
+				</p>
+			</span>
+		</div>`
 	}
 
 	get() {
@@ -74,9 +100,15 @@ class CodeSnippet {
 function renderProjects() {
 	for(let i in projects) {
 		if(projects[i].type == "local-article") {
-
+			new Article(projects[i].image, projects[i].title, projects[i].text, projects[i].link).add();
 		} else {
 			new Article(projects[i].image, projects[i].title, projects[i].text, projects[i].link).add();
 		}
 	}
+}
+
+function renderLocalArticle(pKey) {
+	fetch(local_articles[pKey])
+		.then(pResponse => pResponse.text())
+		.then(pText => document.querySelector("body div").innerHTML = pText);
 }
