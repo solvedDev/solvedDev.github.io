@@ -73,6 +73,10 @@ class CodeSnippet {
 
 function renderProjects() {
 	for(let i in projects) {
-		new Article(projects[i].image, projects[i].title, projects[i].text, projects[i].link).add();
+		if(projects[i].type == "local-article") {
+
+		} else {
+			new Article(projects[i].image, projects[i].title, projects[i].text, projects[i].link).add();
+		}
 	}
 }
