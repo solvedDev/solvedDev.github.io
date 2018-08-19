@@ -25,6 +25,11 @@ const projects = [
 		link: "https://github.com/solvedDev/Item-Generator"
 	},
 	{
+		title: "MCBE Documentation",
+		text: "<strong>[WIP]</strong> A parseable addon documentation created out of vanilla files.",
+		link: "https://github.com/solvedDev/MCBE-Documentation"
+	},
+	{
 		type: "local-article",
 		key: "server-uis",
 		title: "Server UIs",
