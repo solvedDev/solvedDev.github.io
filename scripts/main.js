@@ -7,7 +7,7 @@ const projects = [
 	{
 		title: "AnyLanguage",
 		text: "A generator to simplify your work with .lang files.",
-		link: "https://github.com/solvedDev/AnyLanguage"
+		link: "https://solveddev.github.io/AnyLanguage"
 	},
 	{
 		title: "VS Code Suggestions",
