@@ -26,8 +26,8 @@ const projects = [
 	},
 	{
 		title: "MCBE Documentation",
-		text: "<strong>[WIP]</strong> A parseable addon documentation created out of vanilla files.",
-		link: "https://github.com/solvedDev/MCBE-Documentation"
+		text: "<strong>[WIP]</strong> A better addon documentation.",
+		link: "https://solveddev.github.io/MCBE-Documentation"
 	},
 	{
 		type: "local-article",
